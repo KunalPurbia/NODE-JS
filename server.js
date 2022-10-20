@@ -1,8 +1,9 @@
-const http = require('https');
+const http = require('http');
 
-http.createServer((req, res)=>{
-    res.writeHead(200, {'Content-type':'text/html'});
-    res.end("Server started");
-}).listen(8080, ()=>{
-    console.log("Server started");
+http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World');
+}).listen(9000, () => {
+    console.log("Server started on port 9000");
 })
